@@ -1,0 +1,22 @@
+.menu-sidebar {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    padding: 0 20px;
+    height: calc(100vh - 100px);
+}
+
+.menu-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-sidebar li {
+    margin-bottom: 10px;
+}
+
+.menu-sidebar a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
