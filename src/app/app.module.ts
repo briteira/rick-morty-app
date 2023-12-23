@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MenuSidebarComponent } from './components/menu-sidebar/menu-sidebar.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MenuSidebarComponent } from './components/menu-sidebar/menu-sidebar.com
   imports: [
     BrowserModule,
     CommonModule,
-    RouterModule
+    RouterModule,
+    TranslateModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
