@@ -1,6 +1,6 @@
 {
     "menu": {
-        "paginaInicial": "Home",
+        "home": "Home",
         "listaDePersonagens": "Characterlist",
         "listaDeEpisodios": "List of episodes"
     }
