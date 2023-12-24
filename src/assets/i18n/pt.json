@@ -3,5 +3,9 @@
         "home": "Home",
         "listaDePersonagens": "Lista de personagens",
         "listaDeEpisodios": "Lista de episódios"
+    },
+    "configuracoes": {
+        "portugues": "Português",
+        "ingles": "Inglês"
     }
 }
