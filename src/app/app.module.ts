@@ -16,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon'
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AppRoutingModule } from './app-routing.module';
+import { CharacterListComponent } from './modules/components/character-list/character-list.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -26,7 +27,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     HeaderComponent,
-    MenuSidebarComponent
+    MenuSidebarComponent,
+    CharacterListComponent
   ],
   imports: [
     AppRoutingModule,

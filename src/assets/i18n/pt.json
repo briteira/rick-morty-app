@@ -7,5 +7,23 @@
     "configuracoes": {
         "portugues": "Português",
         "ingles": "Inglês"
+    },
+    "character": {
+        "status": {
+            "alive": "Vivo",
+            "dead": "Morto",
+            "unknown": "Desconhecido"
+        },
+        "gender": {
+            "female": "Feminino",
+            "male": "Masculino",
+            "genderless": "Sêm gênero",
+            "unknown": "Desconhecido"
+        },
+        "dados": {
+            "nome": "Nome",
+            "status": "Status",
+            "genero": "Gênero"
+        }
     }
 }
