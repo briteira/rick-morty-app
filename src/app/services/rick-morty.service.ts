@@ -12,8 +12,9 @@ export class RickMortyService {
 
   constructor(private http: HttpClient) {}
 
-  getCharacters(): Observable<RickMortyResponseModel> {
-    return this.http.get<RickMortyResponseModel>(`${this.apiUrl}character`);
+  getCharacters(pagina?: number): Observable<RickMortyResponseModel> {
+    pagina = pagina ?? 1;
+    return this.http.get<RickMortyResponseModel>(`${this.apiUrl}character?page=${pagina}`);
   }
 
   getEpisodes(): Observable<any> {
