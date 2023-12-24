@@ -12,8 +12,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { MatMenuModule } from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button'
 import { MatIconModule } from '@angular/material/icon'
+
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -41,8 +42,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     MatMenuModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    BsDropdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

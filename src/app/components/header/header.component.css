@@ -8,3 +8,11 @@
     justify-content: space-between; 
     padding: 0 16px
 }
+
+.app-header .btn-dropdown-menu:hover {
+    cursor: pointer;
+}
+
+.app-header .btn-dropdown-menu:hover .mat-icon {
+    color: #f1f1f1
+}
