@@ -1,9 +1,19 @@
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 @import '~material-icons/iconfont/material-icons.css';
 
+@font-face {
+    font-family: 'PT Sans';
+    src: url('./assets/fonts/PT_Sans/PTSans-Regular.ttf') format('truetype');
+}
+
 body {
     margin: 0;
     height: 100%;
+    font-family: 'PT Sans', sans-serif;
+}
+
+h1 {
+    font-size: 1.7em;
 }
 
 h1, h2, h3, h4, h5, h6 {
