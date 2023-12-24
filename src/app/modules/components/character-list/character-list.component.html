@@ -21,8 +21,8 @@
       <tr *ngFor="let item of dados">
         <th scope="row">{{ item.id }}</th>
         <td>{{ item.name }}</td>
-        <td>{{ item.status }}</td>
-        <td>{{ item.gender }}</td>
+        <td>{{ obterLabelStatus(item.status) | translate }}</td>
+        <td>{{ obterLabelGenero(item.gender) | translate }}</td>
       </tr>
     </tbody>
   </table>

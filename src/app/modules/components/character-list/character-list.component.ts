@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { EnumCharacterGenderId, EnumCharacterGenderLabel, EnumCharacterStatusId, EnumCharacterStatusLabel } from 'src/app/enums/character.enum';
 import { CharacterModel } from 'src/app/models/character.model';
 import { RickMortyService } from 'src/app/services/rick-morty.service';
 
@@ -19,7 +20,7 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
 
   constructor(
     private rickMortyService: RickMortyService,
-    private renderer: Renderer2
+    private renderer: Renderer2,
   ) { }
 
   ngAfterViewInit(): void {
@@ -60,6 +61,27 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
     if (isAtBottom) {
       this.carregarDados();
     }
+  }
+
+  obterLabelStatus(status: EnumCharacterStatusId) {
+    const statusLabelMapping: Record<EnumCharacterStatusId, string> = {
+      [EnumCharacterStatusId.Alive]: EnumCharacterStatusLabel.Alive,
+      [EnumCharacterStatusId.Dead]: EnumCharacterStatusLabel.Dead,
+      [EnumCharacterStatusId.Unknown]: EnumCharacterStatusLabel.Unknown,
+    };
+  
+    return statusLabelMapping[status] || ''; 
+  }
+
+  obterLabelGenero(status: EnumCharacterGenderId) {
+    const statusLabelMapping: Record<EnumCharacterGenderId, string> = {
+      [EnumCharacterGenderId.Female]: EnumCharacterGenderLabel.Female,
+      [EnumCharacterGenderId.Male]: EnumCharacterGenderLabel.Male,
+      [EnumCharacterGenderId.Genderless]: EnumCharacterGenderLabel.Male,
+      [EnumCharacterGenderId.Unknown]: EnumCharacterGenderLabel.Male,
+    };
+  
+    return statusLabelMapping[status] || ''; 
   }
 
 }
