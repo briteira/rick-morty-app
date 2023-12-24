@@ -43,7 +43,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatMenuModule,
     BrowserAnimationsModule,
     MatIconModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
