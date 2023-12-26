@@ -1,4 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { InputSearchService } from 'src/app/components/input-search/input-search.service';
 import { EnumCharacterGenderId, EnumCharacterGenderLabel, EnumCharacterStatusId, EnumCharacterStatusLabel } from 'src/app/enums/character.enum';
 import { CharacterModel } from 'src/app/models/character.model';
 import { RickMortyService } from 'src/app/services/rick-morty.service';
@@ -12,6 +14,8 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
 
   @ViewChild('divTabela', { static: true }) divTabela: ElementRef | undefined;
 
+  private subscription: Subscription | undefined;
+
   dados: CharacterModel[] = [];
 
   pagina = 1;
@@ -24,6 +28,7 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
   constructor(
     private rickMortyService: RickMortyService,
     private renderer: Renderer2,
+    private inputSearchService: InputSearchService
   ) { }
 
   ngAfterViewInit(): void {
@@ -31,7 +36,15 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.carregarDados();
+    this.subscription = this.inputSearchService.nome$.subscribe(nome => {
+      this.filtroNome = nome;
+      this.carregarDados();
+    });
+    this.subscription.unsubscribe();
+  }
+
+  ngOnDestroy() {
+    this.subscription?.unsubscribe();
   }
 
   carregarDados() {
@@ -43,7 +56,9 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
       this.dados = [];
     }
 
-    this.rickMortyService.getCharacters(this.pagina, this.filtroNome).subscribe((result) => {      
+    this.rickMortyService.getCharacters(this.pagina, this.filtroNome).subscribe((result) => {   
+      this.loading = false;
+
       this.dados = [...this.dados, ...result.results];
       this.pagina++;
       if (this.pagina <= result.info.pages) {
@@ -53,11 +68,9 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
       } else {
         this.dadosTotalCarregado = true;
       }
-
-      this.loading = false;
     }, (error) => {
-      this.dados = [];
       this.loading = false;
+      this.dados = [];
     })
   }
 
@@ -74,7 +87,6 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
 
     if (isAtBottom) {
       if (!this.loading) {
-        this.loading = true;
         this.carregarDados();  
       }
       

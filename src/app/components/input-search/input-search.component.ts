@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { InputSearchService } from './input-search.service';
 
 @Component({
   selector: 'app-input-search',
@@ -12,17 +13,25 @@ export class InputSearchComponent implements OnInit {
 
   formGroup: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { 
+  constructor(
+    private formBuilder: FormBuilder,
+    private inputSearchService: InputSearchService
+  ) { 
     this.formGroup = this.formBuilder.group({
       nome: ['', []]
     });
   }
 
   ngOnInit() {
+    this.inputSearchService.nome$.subscribe(nome => {
+      this.formGroup.get('nome')?.setValue(nome);
+    });
   }
 
   buscar() {
-    this.aoBuscar.emit(this.formGroup.get('nome')?.value);
+    const nome = this.formGroup.get('nome')?.value;
+    this.aoBuscar.emit(nome);
+    this.inputSearchService.setNome(nome);
   }
 
 }
