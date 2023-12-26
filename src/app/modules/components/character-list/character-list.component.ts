@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { InputSearchService } from 'src/app/components/input-search/input-search.service';
 import { EnumCharacterGenderId, EnumCharacterGenderLabel, EnumCharacterStatusId, EnumCharacterStatusLabel } from 'src/app/enums/character.enum';
@@ -128,6 +128,11 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
     this.divTabela?.nativeElement.scrollTo({
       top: 0,
     });
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.ajustarAlturaTabela();
   }
 
 }
