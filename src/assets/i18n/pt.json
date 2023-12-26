@@ -25,5 +25,8 @@
             "status": "Status",
             "genero": "Gênero"
         }
+    },
+    "inputSearch": {
+        "buscarPorNome": "Buscar por nome"
     }
 }

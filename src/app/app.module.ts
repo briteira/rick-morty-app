@@ -17,6 +17,8 @@ import { MatIconModule } from '@angular/material/icon'
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AppRoutingModule } from './app-routing.module';
 import { CharacterListComponent } from './modules/components/character-list/character-list.component';
+import { InputSearchComponent } from './components/input-search/input-search.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -28,7 +30,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     HeaderComponent,
     MenuSidebarComponent,
-    CharacterListComponent
+    CharacterListComponent,
+    InputSearchComponent
   ],
   imports: [
     AppRoutingModule,
@@ -48,6 +51,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserAnimationsModule,
     MatIconModule,
     BsDropdownModule.forRoot(),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -15,8 +15,11 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
   dados: CharacterModel[] = [];
 
   pagina = 1;
+  filtroNome?: string | undefined;
 
   dadosTotalCarregado = false;
+
+  loading = true;
 
   constructor(
     private rickMortyService: RickMortyService,
@@ -34,16 +37,27 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
   carregarDados() {
     if (this.dadosTotalCarregado) return;
 
-    this.rickMortyService.getCharacters(this.pagina).subscribe((result) => {
+    this.loading = true;
+
+    if (this.pagina == 1) {
+      this.dados = [];
+    }
+
+    this.rickMortyService.getCharacters(this.pagina, this.filtroNome).subscribe((result) => {      
       this.dados = [...this.dados, ...result.results];
       this.pagina++;
       if (this.pagina <= result.info.pages) {
         if (this.pagina == 2) {
-          this.carregarDados();
+          return this.carregarDados();
         }
       } else {
         this.dadosTotalCarregado = true;
       }
+
+      this.loading = false;
+    }, (error) => {
+      this.dados = [];
+      this.loading = false;
     })
   }
 
@@ -56,10 +70,14 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
 
   onScrollTable() {
     const container = this.divTabela?.nativeElement;
-    const isAtBottom = container.scrollTop + container.clientHeight >= container.scrollHeight - 10;
+    const isAtBottom = container.scrollTop + container.clientHeight >= container.scrollHeight;
 
     if (isAtBottom) {
-      this.carregarDados();
+      if (!this.loading) {
+        this.loading = true;
+        this.carregarDados();  
+      }
+      
     }
   }
 
@@ -82,6 +100,22 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
     };
   
     return statusLabelMapping[status] || ''; 
+  }
+
+  aoBuscarInputSearch($event: string) {
+    this.scrollToTop();
+
+    this.pagina = 1;
+    this.filtroNome = $event;
+    this.dadosTotalCarregado = false;
+
+    this.carregarDados();
+  }
+
+  scrollToTop() {
+    this.divTabela?.nativeElement.scrollTo({
+      top: 0,
+    });
   }
 
 }

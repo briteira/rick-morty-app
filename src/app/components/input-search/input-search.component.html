@@ -1,0 +1,15 @@
+<form [formGroup]="formGroup" (submit)="buscar()">
+  <div class="input-group">
+    <input type="text" 
+      placeholder="{{ 'inputSearch.buscarPorNome' | translate }}"
+      value="" 
+      class="form-control" 
+      autocomplete="off"
+      aria-describedby="inputSearchByName"
+      formControlName="nome" />
+      
+      <button class="btn btn-primary" type="button" id="button-addon1" (click)="buscar()">
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+</form>
