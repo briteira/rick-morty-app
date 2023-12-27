@@ -33,6 +33,7 @@
         "cancelar": "Cancel",
         "aplicar": "Apply",
         "todos": "All",
-        "filtros": "Filters"
+        "filtros": "Filters",
+        "erroAoCarregarDados": "An error occurred while loading the data"
     }
 }

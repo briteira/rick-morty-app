@@ -31,11 +31,14 @@
         <td>{{ obterLabelStatus(item.status) | translate }}</td>
         <td>{{ obterLabelGenero(item.gender) | translate }}</td>
       </tr>
-      <tr *ngIf="dados.length == 0 && !loading">
+      <tr *ngIf="dados.length == 0 && !loading && !erroAoCarregarDados" class="bg-white">
         <td colspan="4">Nenhum registro encontrado</td>
       </tr>
-      <tr *ngIf="loading">
+      <tr *ngIf="loading" class="bg-white">
         <td colspan="4">Carregando...</td>
+      </tr>
+      <tr *ngIf="erroAoCarregarDados" class="bg-white">
+        <td colspan="4">{{ 'geral.erroAoCarregarDados' | translate }}</td>
       </tr>
     </tbody>
   </table>

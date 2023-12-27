@@ -30,3 +30,8 @@ app-input-search {
     border: 1px solid #ddb130;
     background: #FFF;
 }
+
+tr.bg-white, tr.bg-white td {
+    background-color: white !important;    
+    --bs-table-bg-type: white !important;
+}

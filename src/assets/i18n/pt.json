@@ -33,6 +33,7 @@
         "cancelar": "Cancelar",
         "aplicar": "Aplicar",
         "todos": "Todos",
-        "filtros": "Filtros"
+        "filtros": "Filtros",
+        "erroAoCarregarDados": "Ocorreu um erro ao carregar os dados"
     }
 }

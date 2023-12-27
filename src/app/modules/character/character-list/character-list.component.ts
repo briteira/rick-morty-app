@@ -31,6 +31,8 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
 
   loading = true;
 
+  erroAoCarregarDados = false;
+
   bsModalRef?: BsModalRef;
 
   constructor(
@@ -57,6 +59,8 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
   }
 
   carregarDados() {
+    this.erroAoCarregarDados = false;
+
     if (this.dadosTotalCarregado) return;
 
     this.loading = true;
@@ -80,6 +84,9 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
     }, (error) => {
       this.loading = false;
       this.dados = [];
+      if (error?.status != 404) {
+        this.erroAoCarregarDados = true;
+      }
     })
   }
 
