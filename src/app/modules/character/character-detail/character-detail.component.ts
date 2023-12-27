@@ -4,6 +4,7 @@ import { EnumCharacterGenderId, EnumCharacterGenderLabel, EnumCharacterSpecieId,
 import { CharacterModel } from 'src/app/models/character.model';
 import { RickMortyService } from 'src/app/services/rick-morty.service';
 import { Location } from '@angular/common';
+import { EpisodeModel } from 'src/app/models/episode.model';
 
 @Component({
   selector: 'app-character-detail',
@@ -15,6 +16,8 @@ export class CharacterDetailComponent implements OnInit {
   id: number;
 
   dados: CharacterModel | null = null;
+  
+  listaEpisodios: EpisodeModel[] = [];
 
   loading = true;
 
@@ -37,8 +40,14 @@ export class CharacterDetailComponent implements OnInit {
     this.loading = true;
 
     this.rickMortyService.getCharacter(this.id).subscribe((result) => {   
-      this.loading = false;
+      
       this.dados = result;
+      
+      var idsEpsodios = this.obterIdsEpisodios(result.episode);
+      this.rickMortyService.getEpisodesById(idsEpsodios).subscribe((episodios) => { 
+        this.listaEpisodios = episodios;
+        this.loading = false;
+      });
     });
   }
 
@@ -91,6 +100,15 @@ export class CharacterDetailComponent implements OnInit {
     };
   
     return specieLabelMapping[specie] || specie; 
+  }
+
+  obterIdsEpisodios(lista: string[]) {
+    const urlApi = 'https://rickandmortyapi.com/api/episode/';
+    return lista.map((i) => parseInt(i.replace(urlApi, "")));
+  }
+
+  abrirDetalheEpisodio(id: number) {
+    this.router.navigate(['/episodes/detail', id]);
   }
 
 }

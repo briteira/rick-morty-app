@@ -16,3 +16,17 @@
 .grupo-dados {
     padding-bottom: 16px;
 }
+
+.lista-episodios tr:last-child td {
+    border: none;
+}
+
+.table-resposive {
+    max-height: calc(100vh - 500px);
+    min-height: 80px;
+    overflow-y: auto;
+}
+
+.clickable {
+    cursor: pointer;
+}

@@ -47,4 +47,8 @@ export class RickMortyService {
   getEpisode(id: number): Observable<EpisodeModel> {
     return this.http.get<EpisodeModel>(`${this.apiUrl}episode/${id}`);
   }
+
+  getEpisodesById(ids: number[]): Observable<EpisodeModel[]> {
+    return this.http.get<EpisodeModel[]>(`${this.apiUrl}episode/[${ids.join(',')}]`);
+  }
 }

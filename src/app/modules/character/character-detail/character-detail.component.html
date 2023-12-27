@@ -1,9 +1,11 @@
-<div class="row">
-  <div class="col-md-12 d-flex justify-content-between">
-    <h3>{{ dados?.name ?? ('character.character' | translate) }}</h3>
-    <button type="button" class="btn btn-outline-primary btn-filtro" (click)="fechar()">
-      {{ 'geral.voltar' | translate }}
-    </button>
+<div class="header">
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-between">
+      <h3>{{ dados?.name ?? ('character.character' | translate) }}</h3>
+      <button type="button" class="btn btn-outline-primary btn-filtro" (click)="fechar()">
+        {{ 'geral.voltar' | translate }}
+      </button>
+    </div>
   </div>
 </div>
   
@@ -49,4 +51,26 @@
   </div>
 </div>
 
-<!-- <img [src]="dados?.image" /> -->
+
+<div *ngIf="!loading" class="card mt-3 lista-episodios">
+  <div class="card-body">
+    <h5 class="card-title">{{ 'menu.episodios' | translate }}</h5>
+    <div class="table-resposive">
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th>{{ 'episode.dados.nome' | translate }}</th>
+            <th>{{ 'episode.dados.episodio' | translate }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of listaEpisodios"  class="clickable" (click)="abrirDetalheEpisodio(item.id)">
+            <td>{{ item.name }}</td>
+            <td>{{ item.episode }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+  </div>
+</div>
