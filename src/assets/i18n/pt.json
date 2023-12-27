@@ -24,9 +24,6 @@
             "nome": "Nome",
             "status": "Status",
             "genero": "Gênero"
-        },
-        "filtros": {
-            "filtros": "Filtros"
         }
     },
     "inputSearch": {
@@ -35,6 +32,7 @@
     "geral": {
         "cancelar": "Cancelar",
         "aplicar": "Aplicar",
-        "todos": "Todos"
+        "todos": "Todos",
+        "filtros": "Filtros"
     }
 }

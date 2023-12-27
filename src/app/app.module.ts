@@ -21,6 +21,7 @@ import { InputSearchComponent } from './components/input-search/input-search.com
 import { ReactiveFormsModule } from '@angular/forms';
 import { CharacterFilterModalComponent } from './modules/character/character-filter-modal/character-filter-modal.component';
 import { BsModalService } from 'ngx-bootstrap/modal';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -54,7 +55,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserAnimationsModule,
     MatIconModule,
     BsDropdownModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TooltipModule.forRoot()
   ],
   providers: [
     BsModalService
