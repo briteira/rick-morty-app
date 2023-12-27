@@ -35,3 +35,7 @@ tr.bg-white, tr.bg-white td {
     background-color: white !important;    
     --bs-table-bg-type: white !important;
 }
+
+.clickable:hover {
+    cursor: pointer;
+}

@@ -22,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CharacterFilterModalComponent } from './modules/character/character-filter-modal/character-filter-modal.component';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { CharacterDetailComponent } from './modules/character/character-detail/character-detail.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -35,7 +36,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MenuSidebarComponent,
     CharacterListComponent,
     InputSearchComponent,
-    CharacterFilterModalComponent
+    CharacterFilterModalComponent,
+    CharacterDetailComponent
   ],
   imports: [
     AppRoutingModule,

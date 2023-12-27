@@ -7,6 +7,7 @@ import { CharacterModel } from 'src/app/models/character.model';
 import { RickMortyService } from 'src/app/services/rick-morty.service';
 import { CharacterFilterModalComponent } from '../character-filter-modal/character-filter-modal.component';
 import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-character-list',
@@ -39,7 +40,8 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
     private rickMortyService: RickMortyService,
     private renderer: Renderer2,
     private inputSearchService: InputSearchService,
-    private modalService: BsModalService
+    private modalService: BsModalService,
+    private router: Router
   ) { }
 
   ngAfterViewInit(): void {
@@ -73,6 +75,7 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
       this.loading = false;
 
       this.dados = [...this.dados, ...result.results];
+      
       this.pagina++;
       if (this.pagina <= result.info.pages) {
         if (this.pagina == 2) {
@@ -175,6 +178,10 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
 
       this.carregarDados();
     });
+  }
+
+  abrirDetalhe(id: number) {
+    this.router.navigate(['/characters/detail', id]);
   }
 
 }

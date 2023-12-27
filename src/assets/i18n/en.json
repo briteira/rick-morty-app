@@ -9,6 +9,7 @@
         "ingles": "English"
     },
     "character": {
+        "character": "Character",
         "status": {
             "alive": "Alive",
             "dead": "Dead",
@@ -20,10 +21,25 @@
             "genderless": "Genderless",
             "unknown": "Unknown"
         },
+        "specie": {
+            "human": "Human",
+            "alien": "Alien",
+            "humanoid": "Humanoid",
+            "unknown": "Unknown",
+            "poopybutthole": "Poopybutthole",
+            "mythologicalCreature": "Mythological Creature",
+            "animal": "Animal",
+            "cronenberg": "Cronenberg",
+            "disease": "Disease",
+            "robot": "Robot"
+        },
         "dados": {
             "nome": "Name",
             "status": "Status",
-            "genero": "Gender"
+            "genero": "Gender",
+            "especie": "Specie",
+            "episodios": "Episodes",
+            "origem": "Origin"
         }
     },
     "inputSearch": {
@@ -34,6 +50,8 @@
         "aplicar": "Apply",
         "todos": "All",
         "filtros": "Filters",
+        "fechar": "Close",
+        "voltar": "Back",
         "erroAoCarregarDados": "An error occurred while loading the data"
     }
 }

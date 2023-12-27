@@ -1,3 +1,52 @@
-<p>
-  character-detail works!
-</p>
+<div class="row">
+  <div class="col-md-12 d-flex justify-content-between">
+    <h3>{{ dados?.name ?? ('character.character' | translate) }}</h3>
+    <button type="button" class="btn btn-outline-primary btn-filtro" (click)="fechar()">
+      {{ 'geral.voltar' | translate }}
+    </button>
+  </div>
+</div>
+  
+<div *ngIf="loading" class="text-center pt-2">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+<div *ngIf="!loading" class="conteudo">
+  <div class="d-flex justify-content-start">
+    <img class="img-dados" [src]="dados?.image" />
+    
+    <div class="dados">
+      <div class="row">
+        <div class="col-md-12 grupo-dados">
+          <span>{{ 'character.dados.status' | translate }}: </span>
+          <strong>{{ obterLabelStatus(dados?.status ?? null) | translate }} </strong>
+        </div>
+
+        <div class="col-md-12 grupo-dados">
+          <span>{{ 'character.dados.genero' | translate }}: </span>
+          <strong>{{ obterLabelGenero(dados?.gender ?? null) | translate }} </strong>
+        </div>
+
+        <div class="col-md-12 grupo-dados">
+          <span>{{ 'character.dados.especie' | translate }}: </span>
+          <strong>{{ obterLabeleEspecie(dados?.species ?? null) | translate }} </strong>
+        </div>
+
+        <div class="col-md-12 grupo-dados">
+          <span>{{ 'character.dados.episodios' | translate }}: </span>
+          <strong>{{ dados?.episode?.length }} </strong>
+        </div>
+
+        <div class="col-md-12 grupo-dados">
+          <span>{{ 'character.dados.origem' | translate }}: </span>
+          <strong>{{ dados?.origin?.name }} </strong>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- <img [src]="dados?.image" /> -->

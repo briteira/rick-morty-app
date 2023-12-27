@@ -1,4 +1,4 @@
-import { EnumCharacterGenderId, EnumCharacterStatusId } from "../enums/character.enum";
+import { EnumCharacterGenderId, EnumCharacterSpecieId, EnumCharacterStatusId } from "../enums/character.enum";
 
 export interface CharacterOriginModel {
     name: string;
@@ -14,7 +14,7 @@ export interface CharacterModel {
     id: number;
     name: string;
     status: EnumCharacterStatusId;
-    species: string;
+    species: EnumCharacterSpecieId;
     type: string;
     gender: EnumCharacterGenderId;
     origin: CharacterOriginModel;
