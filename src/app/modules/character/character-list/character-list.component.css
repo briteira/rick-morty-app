@@ -16,3 +16,17 @@ app-input-search {
     flex-grow: 1;
     margin-right: 10px;
 }
+
+.btn-filtro {
+    position: relative;
+}
+
+.icone-filtro-aplicado {
+    color: #ddb130;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    border-radius: 4px;
+    border: 1px solid #ddb130;
+    background: #FFF;
+}

@@ -156,9 +156,8 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
     this.bsModalRef = this.modalService.show(CharacterFilterModalComponent, initialState);
 
     this.bsModalRef.content.aoAplicar.subscribe((form: FormGroup) => {
-      this.filtroNome = form.get('nome')?.value;
       this.inputSearchService.setNome(form.get('nome')?.value);
-
+      this.filtroNome = form.get('nome')?.value;
       this.filtroStatus = form.get('status')?.value;
       this.filtroGenero = form.get('genero')?.value;
 
