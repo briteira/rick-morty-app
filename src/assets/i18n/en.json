@@ -1,8 +1,8 @@
 {
     "menu": {
         "home": "Home",
-        "listaDePersonagens": "Characterlist",
-        "listaDeEpisodios": "List of episodes"
+        "personagens": "Characterlist",
+        "episodios": "Episodes"
     },
     "configuracoes": {
         "portugues": "Portuguese",
