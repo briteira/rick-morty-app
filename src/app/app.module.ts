@@ -23,6 +23,9 @@ import { CharacterFilterModalComponent } from './modules/character/character-fil
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { CharacterDetailComponent } from './modules/character/character-detail/character-detail.component';
+import { EpisodeListComponent } from './modules/episode/episode-list/episode-list.component';
+import { EpisodeFilterModalComponent } from './modules/episode/episode-filter-modal/episode-filter-modal.component';
+import { EpisodeDetailComponent } from './modules/episode/episode-detail/episode-detail.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -34,10 +37,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     HeaderComponent,
     MenuSidebarComponent,
-    CharacterListComponent,
     InputSearchComponent,
+    CharacterListComponent,
     CharacterFilterModalComponent,
-    CharacterDetailComponent
+    CharacterDetailComponent,
+    EpisodeListComponent,
+    EpisodeFilterModalComponent,
+    EpisodeDetailComponent
   ],
   imports: [
     AppRoutingModule,

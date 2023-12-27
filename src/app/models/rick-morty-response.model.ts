@@ -1,7 +1,6 @@
-import { CharacterModel } from "./character.model";
 import { InfoModel } from "./info.model";
 
-export interface RickMortyResponseModel {
+export interface RickMortyResponseModel<T> {
     info: InfoModel;
-    results: CharacterModel[];
+    results: T[];
 }

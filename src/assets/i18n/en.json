@@ -42,6 +42,13 @@
             "origem": "Origin"
         }
     },
+    "episode": {
+        "dados": {
+            "nome": "Name",
+            "episodio": "Episode",
+            "airDate": "Air date"
+        }
+    },
     "inputSearch": {
         "buscarPorNome": "Search by name"
     },

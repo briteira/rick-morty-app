@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { RickMortyResponseModel } from '../models/rick-morty-response.model';
 import { CharacterModel } from '../models/character.model';
+import { EpisodeModel } from '../models/episode.model';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,7 @@ export class RickMortyService {
 
   constructor(private http: HttpClient) {}
 
-  getCharacters(pagina?: number, nome?: string, status?: string, genero?: string): Observable<RickMortyResponseModel> {
+  getCharacters(pagina?: number, nome?: string, status?: string, genero?: string): Observable<RickMortyResponseModel<CharacterModel>> {
     pagina = pagina ?? 1;
     
     let url = `${this.apiUrl}character?page=${pagina}`;
@@ -24,14 +25,26 @@ export class RickMortyService {
 
     if (genero && genero.trim() != "") url += `&gender=${genero}`;
 
-    return this.http.get<RickMortyResponseModel>(url);
+    return this.http.get<RickMortyResponseModel<CharacterModel>>(url);
   }
 
   getCharacter(id: number): Observable<CharacterModel> {
     return this.http.get<CharacterModel>(`${this.apiUrl}character/${id}`);
   }
 
-  getEpisodes(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}episode`);
+  getEpisodes(pagina?: number, nome?: string, episodio?: string): Observable<RickMortyResponseModel<EpisodeModel>> {
+    pagina = pagina ?? 1;
+    
+    let url = `${this.apiUrl}episode?page=${pagina}`;
+
+    if (nome && nome.trim() != "") url += `&name=${nome}`;
+
+    if (episodio && episodio.trim() != "") url += `&episode=${episodio}`;
+
+    return this.http.get<RickMortyResponseModel<EpisodeModel>>(url);
+  }
+
+  getEpisode(id: number): Observable<EpisodeModel> {
+    return this.http.get<EpisodeModel>(`${this.apiUrl}episode/${id}`);
   }
 }

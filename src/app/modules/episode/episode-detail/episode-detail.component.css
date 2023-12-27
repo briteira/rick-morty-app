@@ -1,0 +1,17 @@
+.conteudo {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 16px;
+}
+
+.dados {
+    padding: 16px
+}
+
+.grupo-dados {
+    padding-bottom: 16px;
+}
+
+.grupo-dados:last-child {
+    padding-bottom: 0;
+}

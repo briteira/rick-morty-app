@@ -1,0 +1,25 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">{{ 'geral.filtros' | translate }}</h4>
+  <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true" class="visually-hidden">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="formGroup">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="inputNome" class="form-label">{{ 'episode.dados.nome' | translate }}</label>
+        <input type="text" class="form-control" id="inputNome" aria-describedby="inputNome" formControlName="nome">
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="inputEpisodio" class="form-label">{{ 'episode.dados.episodio' | translate }}</label>
+        <input type="text" class="form-control" id="inputEpisodio" aria-describedby="inputEpisodio" formControlName="episodio">
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{ 'geral.cancelar' | translate }}</button>
+  <button type="button" class="btn btn-outline-primary" (click)="aplicar()">{{ 'geral.aplicar' | translate }}</button>
+</div>
