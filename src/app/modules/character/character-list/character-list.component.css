@@ -39,3 +39,8 @@ tr.bg-white, tr.bg-white td {
 .clickable:hover {
     cursor: pointer;
 }
+
+.img-dados {
+    border-radius: 100% !important;
+    height: 35px;
+}

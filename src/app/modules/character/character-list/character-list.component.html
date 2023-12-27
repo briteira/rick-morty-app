@@ -26,7 +26,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let item of dados" class="clickable" (click)="abrirDetalhe(item.id)">
-        <th scope="row">{{ item.id }}</th>
+        <td><img class="rounded img-dados" [src]="item.image"></td>
         <td>{{ item.name }}</td>
         <td>{{ obterLabelStatus(item.status) | translate }}</td>
         <td>{{ obterLabelGenero(item.gender) | translate }}</td>
@@ -36,7 +36,7 @@
       </tr>
       <tr *ngIf="loading" class="bg-white">
         <td colspan="4">
-          <div class="text-center">
+          <div class="text-center pt-1">
             <div class="spinner-border" role="status">
               <span class="visually-hidden">Loading...</span>
             </div>
