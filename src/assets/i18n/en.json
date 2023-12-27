@@ -52,6 +52,7 @@
         "filtros": "Filters",
         "fechar": "Close",
         "voltar": "Back",
-        "erroAoCarregarDados": "An error occurred while loading the data"
+        "erroAoCarregarDados": "An error occurred while loading the data",
+        "nenhumRegistroEncontrado": "No data found"
     }
 }

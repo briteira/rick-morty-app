@@ -52,6 +52,7 @@
         "filtros": "Filtros",
         "fechar": "Fechar",
         "voltar": "Voltar",
-        "erroAoCarregarDados": "Ocorreu um erro ao carregar os dados"
+        "erroAoCarregarDados": "Ocorreu um erro ao carregar os dados",
+        "nenhumRegistroEncontrado": "Nenhum registro encontrado"
     }
 }
