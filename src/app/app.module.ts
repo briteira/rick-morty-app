@@ -16,7 +16,7 @@ import { MatIconModule } from '@angular/material/icon'
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AppRoutingModule } from './app-routing.module';
-import { CharacterListComponent } from './modules/components/character-list/character-list.component';
+import { CharacterListComponent } from './modules/character/character-list/character-list.component';
 import { InputSearchComponent } from './components/input-search/input-search.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
