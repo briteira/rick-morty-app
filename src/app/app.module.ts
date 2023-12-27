@@ -19,6 +19,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { CharacterListComponent } from './modules/character/character-list/character-list.component';
 import { InputSearchComponent } from './components/input-search/input-search.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CharacterFilterModalComponent } from './modules/character/character-filter-modal/character-filter-modal.component';
+import { BsModalService } from 'ngx-bootstrap/modal';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -31,7 +33,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HeaderComponent,
     MenuSidebarComponent,
     CharacterListComponent,
-    InputSearchComponent
+    InputSearchComponent,
+    CharacterFilterModalComponent
   ],
   imports: [
     AppRoutingModule,
@@ -53,7 +56,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     BsDropdownModule.forRoot(),
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    BsModalService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

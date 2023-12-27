@@ -1,0 +1,38 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">{{ 'character.filtros.filtros' | translate }}</h4>
+  <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true" class="visually-hidden">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="formGroup">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="inputNome" class="form-label">{{ 'character.dados.nome' | translate }}</label>
+        <input type="text" class="form-control" id="inputNome" aria-describedby="inputNome" formControlName="nome">
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="selectStatus" class="form-label">{{ 'character.dados.status' | translate }}</label>
+        <select class="form-select" id="selectStatus" formControlName="status" aria-label="selectStatus">
+          <option value="" selected>{{  'geral.todos' | translate }}</option>
+          <option *ngFor="let item of listaStatus" value="{{item.value}}">{{  item.descricao | translate }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="selectGenero" class="form-label">{{ 'character.dados.genero' | translate }}</label>
+        <select class="form-select" id="selectGenero" formControlName="genero" aria-label="selectGenero">
+          <option value="" selected>{{  'geral.todos' | translate }}</option>
+          <option *ngFor="let item of listaGenero" value="{{item.value}}">{{  item.descricao | translate }}</option>
+        </select>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{ 'geral.cancelar' | translate }}</button>
+  <button type="button" class="btn btn-outline-primary" (click)="aplicar()">{{ 'geral.aplicar' | translate }}</button>
+</div>

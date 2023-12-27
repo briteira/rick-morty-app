@@ -1,9 +1,12 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { Subscription } from 'rxjs';
 import { InputSearchService } from 'src/app/components/input-search/input-search.service';
 import { EnumCharacterGenderId, EnumCharacterGenderLabel, EnumCharacterStatusId, EnumCharacterStatusLabel } from 'src/app/enums/character.enum';
 import { CharacterModel } from 'src/app/models/character.model';
 import { RickMortyService } from 'src/app/services/rick-morty.service';
+import { CharacterFilterModalComponent } from '../character-filter-modal/character-filter-modal.component';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-character-list',
@@ -19,16 +22,22 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
   dados: CharacterModel[] = [];
 
   pagina = 1;
+
   filtroNome?: string | undefined;
+  filtroStatus?: string | undefined;
+  filtroGenero?: string | undefined;
 
   dadosTotalCarregado = false;
 
   loading = true;
 
+  bsModalRef?: BsModalRef;
+
   constructor(
     private rickMortyService: RickMortyService,
     private renderer: Renderer2,
-    private inputSearchService: InputSearchService
+    private inputSearchService: InputSearchService,
+    private modalService: BsModalService
   ) { }
 
   ngAfterViewInit(): void {
@@ -56,7 +65,7 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
       this.dados = [];
     }
 
-    this.rickMortyService.getCharacters(this.pagina, this.filtroNome).subscribe((result) => {   
+    this.rickMortyService.getCharacters(this.pagina, this.filtroNome, this.filtroStatus, this.filtroGenero).subscribe((result) => {   
       this.loading = false;
 
       this.dados = [...this.dados, ...result.results];
@@ -107,8 +116,8 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
     const statusLabelMapping: Record<EnumCharacterGenderId, string> = {
       [EnumCharacterGenderId.Female]: EnumCharacterGenderLabel.Female,
       [EnumCharacterGenderId.Male]: EnumCharacterGenderLabel.Male,
-      [EnumCharacterGenderId.Genderless]: EnumCharacterGenderLabel.Male,
-      [EnumCharacterGenderId.Unknown]: EnumCharacterGenderLabel.Male,
+      [EnumCharacterGenderId.Genderless]: EnumCharacterGenderLabel.Genderless,
+      [EnumCharacterGenderId.Unknown]: EnumCharacterGenderLabel.Unknown,
     };
   
     return statusLabelMapping[status] || ''; 
@@ -133,6 +142,33 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {
     this.ajustarAlturaTabela();
+  }
+
+  abrirModalFiltros() {
+    const initialState: ModalOptions = {
+      initialState: {
+        nome: this.filtroNome,
+        status: this.filtroStatus,
+        genero: this.filtroGenero
+      },
+      class: 'modal-lg'
+    };
+    this.bsModalRef = this.modalService.show(CharacterFilterModalComponent, initialState);
+
+    this.bsModalRef.content.aoAplicar.subscribe((form: FormGroup) => {
+      this.filtroNome = form.get('nome')?.value;
+      this.inputSearchService.setNome(form.get('nome')?.value);
+
+      this.filtroStatus = form.get('status')?.value;
+      this.filtroGenero = form.get('genero')?.value;
+
+      this.scrollToTop();
+
+      this.pagina = 1;
+      this.dadosTotalCarregado = false;
+
+      this.carregarDados();
+    });
   }
 
 }

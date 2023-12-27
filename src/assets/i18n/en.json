@@ -24,9 +24,17 @@
             "nome": "Name",
             "status": "Status",
             "genero": "Gender"
+        },
+        "filtros": {
+            "filtros": "Filters"
         }
     },
     "inputSearch": {
         "buscarPorNome": "Search by name"
+    },
+    "geral": {
+        "cancelar": "Cancel",
+        "aplicar": "Apply",
+        "todos": "All"
     }
 }
