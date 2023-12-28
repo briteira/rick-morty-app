@@ -1,0 +1,36 @@
+<div class="header">
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-between">
+      <h3>{{ dados?.name ?? ('menu.locais' | translate) }}</h3>
+      <button type="button" class="btn btn-outline-primary btn-filtro" (click)="fechar()">
+        {{ 'geral.voltar' | translate }}
+      </button>
+    </div>
+  </div>
+</div>
+  
+<div *ngIf="loading" class="text-center pt-2">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+<div *ngIf="!loading" class="conteudo">
+  <div class="d-flex justify-content-start">
+    
+    <div class="dados">
+      <div class="row">
+        <div class="col-md-12 grupo-dados">
+          <span>{{ 'location.dados.tipo' | translate }}: </span>
+          <strong>{{ dados?.type }} </strong>
+        </div>
+        
+        <div class="col-md-12 grupo-dados">
+          <span>{{ 'location.dados.dimensao' | translate }}: </span>
+          <strong>{{ dados?.dimension }} </strong>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

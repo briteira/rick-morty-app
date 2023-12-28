@@ -26,6 +26,9 @@ import { CharacterDetailComponent } from './modules/character/character-detail/c
 import { EpisodeListComponent } from './modules/episode/episode-list/episode-list.component';
 import { EpisodeFilterModalComponent } from './modules/episode/episode-filter-modal/episode-filter-modal.component';
 import { EpisodeDetailComponent } from './modules/episode/episode-detail/episode-detail.component';
+import { LocationListComponent } from './modules/location/location-list/location-list.component';
+import { LocationFilterModalComponent } from './modules/location/location-filter-modal/location-filter-modal.component';
+import { LocationDetailComponent } from './modules/location/location-detail/location-detail.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -43,7 +46,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     CharacterDetailComponent,
     EpisodeListComponent,
     EpisodeFilterModalComponent,
-    EpisodeDetailComponent
+    EpisodeDetailComponent,
+    LocationListComponent,
+    LocationFilterModalComponent,
+    LocationDetailComponent
   ],
   imports: [
     AppRoutingModule,

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { RickMortyResponseModel } from '../models/rick-morty-response.model';
 import { CharacterModel } from '../models/character.model';
 import { EpisodeModel } from '../models/episode.model';
+import { LocationModel } from '../models/location.model';
 
 @Injectable({
   providedIn: 'root',
@@ -54,5 +55,27 @@ export class RickMortyService {
 
   getEpisodesById(ids: number[]): Observable<EpisodeModel[]> {
     return this.http.get<EpisodeModel[]>(`${this.apiUrl}episode/[${ids.join(',')}]`);
+  }
+
+  getLocations(pagina?: number, nome?: string, tipo?: string, dimensao?: string): Observable<RickMortyResponseModel<LocationModel>> {
+    pagina = pagina ?? 1;
+    
+    let url = `${this.apiUrl}location?page=${pagina}`;
+
+    if (nome && nome.trim() != "") url += `&name=${nome}`;
+
+    if (tipo && tipo.trim() != "") url += `&type=${tipo}`;
+
+    if (dimensao && dimensao.trim() != "") url += `&dimension=${dimensao}`;
+
+    return this.http.get<RickMortyResponseModel<LocationModel>>(url);
+  }
+
+  getLocation(id: number): Observable<LocationModel> {
+    return this.http.get<LocationModel>(`${this.apiUrl}location/${id}`);
+  }
+
+  getLocationById(ids: number[]): Observable<LocationModel[]> {
+    return this.http.get<LocationModel[]>(`${this.apiUrl}location/[${ids.join(',')}]`);
   }
 }

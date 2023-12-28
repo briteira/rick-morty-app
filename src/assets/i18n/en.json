@@ -2,7 +2,8 @@
     "menu": {
         "home": "Home",
         "personagens": "Characterlist",
-        "episodios": "Episodes"
+        "episodios": "Episodes",
+        "locais": "Locations"
     },
     "configuracoes": {
         "portugues": "Portuguese",
@@ -46,6 +47,14 @@
         "dados": {
             "nome": "Name",
             "episodio": "Episode",
+            "airDate": "Air date"
+        }
+    },
+    "location": {
+        "dados": {
+            "nome": "Name",
+            "tipo": "Type",
+            "dimensao": "Dimension",
             "airDate": "Air date"
         }
     },
