@@ -111,4 +111,11 @@ export class CharacterDetailComponent implements OnInit {
     this.router.navigate(['/episodes/detail', id]);
   }
 
+  abrirLocalizacao(url?: string) {
+    if (!url) return;
+    const urlApi = 'https://rickandmortyapi.com/api/location/';
+    const id = url.replace(urlApi, "");
+    this.router.navigate(['/locations/detail', id]);
+  }
+
 }

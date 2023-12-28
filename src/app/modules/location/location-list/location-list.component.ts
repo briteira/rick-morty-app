@@ -74,8 +74,6 @@ export class LocationListComponent implements OnInit, AfterViewInit {
       this.loading = false;
 
       this.dados = [...this.dados, ...result.results];
-
-      console.log(this.dados);
       
       this.pagina++;
       if (this.pagina <= result.info.pages) {

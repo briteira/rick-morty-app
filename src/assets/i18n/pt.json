@@ -40,7 +40,8 @@
             "genero": "Gênero",
             "especie": "Espécie",
             "episodios": "Episódios",
-            "origem": "Origem"
+            "origem": "Origem",
+            "localizacao": "Localização"
         }
     },
     "episode": {

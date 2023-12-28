@@ -45,6 +45,11 @@
           <span>{{ 'character.dados.origem' | translate }}: </span>
           <strong>{{ dados?.origin?.name }} </strong>
         </div>
+
+        <div class="col-md-12 grupo-dados">
+          <span>{{ 'character.dados.localizacao' | translate }}: </span>
+          <strong><a href="javascript:;" (click)="abrirLocalizacao(dados?.location?.url)">{{ dados?.location?.name }}</a></strong>
+        </div>
       </div>
     </div>
 
