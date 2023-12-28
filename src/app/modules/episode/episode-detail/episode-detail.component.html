@@ -25,8 +25,31 @@
         <div class="col-md-12 grupo-dados">
           <span>{{ 'episode.dados.airDate' | translate }}: </span>
           <strong>{{ dados?.air_date }}</strong>
+        </div>
       </div>
     </div>
+  </div>
+</div>
 
+<div *ngIf="!loading" class="card mt-3 lista-character">
+  <div class="card-body">
+    <h5 class="card-title">{{ 'menu.personagens' | translate }}</h5>
+    <div class="table-resposive">
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>{{ 'character.dados.nome' | translate }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of listaPersonagens"  class="clickable" (click)="abrirDetalhePersonagem(item.id)">
+            <td><img class="img-personagem" [src]="item.image"></td>
+            <td>{{ item.name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
   </div>
 </div>

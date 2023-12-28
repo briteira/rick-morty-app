@@ -32,6 +32,10 @@ export class RickMortyService {
     return this.http.get<CharacterModel>(`${this.apiUrl}character/${id}`);
   }
 
+  getCharacterById(ids: number[]): Observable<CharacterModel[]> {
+    return this.http.get<CharacterModel[]>(`${this.apiUrl}character/[${ids.join(',')}]`);
+  }
+
   getEpisodes(pagina?: number, nome?: string, episodio?: string): Observable<RickMortyResponseModel<EpisodeModel>> {
     pagina = pagina ?? 1;
     
