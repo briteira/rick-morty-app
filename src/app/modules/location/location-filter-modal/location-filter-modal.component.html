@@ -9,19 +9,19 @@
     <div class="row">
       <div class="col-md-6 mb-3">
         <label for="inputNome" class="form-label">{{ 'location.dados.nome' | translate }}</label>
-        <input type="text" class="form-control" id="inputNome" aria-describedby="inputNome" formControlName="nome">
+        <input type="text" class="form-control" id="inputNome" aria-describedby="inputNome" formControlName="nome" (keyup.enter)="aplicar()">
       </div>
 
       <div class="col-md-6 mb-3">
         <label for="inputTipo" class="form-label">{{ 'location.dados.tipo' | translate }}</label>
-        <input type="text" class="form-control" id="inputTipo" aria-describedby="inputTipo" formControlName="tipo">
+        <input type="text" class="form-control" id="inputTipo" aria-describedby="inputTipo" formControlName="tipo" (keyup.enter)="aplicar()">
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-6 mb-3">
         <label for="inputDimensao" class="form-label">{{ 'location.dados.dimensao' | translate }}</label>
-        <input type="text" class="form-control" id="inputDimensao" aria-describedby="inputDimensao" formControlName="dimensao">
+        <input type="text" class="form-control" id="inputDimensao" aria-describedby="inputDimensao" formControlName="dimensao" (keyup.enter)="aplicar()">
       </div>
     </div>
   </form>
