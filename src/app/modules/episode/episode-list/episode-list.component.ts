@@ -95,7 +95,8 @@ export class EpisodeListComponent implements OnInit, AfterViewInit {
     const header = document.querySelector(".header");
     const heightHeader = '70px';
     const paddingRouterElement = '24px';
-    this.renderer.setStyle(this.divTabela?.nativeElement, 'height', `calc(100vh - ${heightHeader} - ${paddingRouterElement} - ${header?.clientHeight}px)`);
+    const folga = '16px';
+    this.renderer.setStyle(this.divTabela?.nativeElement, 'height', `calc(100vh - ${heightHeader} - ${paddingRouterElement} - ${header?.clientHeight}px - ${folga})`);
   }
 
   onScrollTable() {
