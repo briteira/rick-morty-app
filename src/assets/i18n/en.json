@@ -73,10 +73,13 @@
         "erroAoCarregarDados": "An error occurred while loading the data",
         "nenhumRegistroEncontrado": "No data found",
         "email": "E-mail",
-        "senha": "Password"
+        "senha": "Password",
+        "sim": "Yes",
+        "nao": "No"
     },
     "login": {
         "login": "Login",
-        "emailOuSenhaIncorretos": "Incorrect email or password"
+        "emailOuSenhaIncorretos": "Incorrect email or password",
+        "desejaRealmenteSair": "Do you really want to leave?"
     }
 }

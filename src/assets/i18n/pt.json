@@ -73,10 +73,13 @@
         "erroAoCarregarDados": "Ocorreu um erro ao carregar os dados",
         "nenhumRegistroEncontrado": "Nenhum registro encontrado",
         "email": "E-mail",
-        "senha": "Senha"
+        "senha": "Senha",
+        "sim": "Sim",
+        "nao": "Não"
     },
     "login": {
         "login": "Login",
-        "emailOuSenhaIncorretos": "E-mail ou senha incorretos"
+        "emailOuSenhaIncorretos": "E-mail ou senha incorretos",
+        "desejaRealmenteSair": "Deseja realmente sair?"
     }
 }

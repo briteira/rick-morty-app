@@ -11,5 +11,19 @@
         <li role="menuitem"><a class="dropdown-item" href="javascript:void()" (click)="switchLanguage('en')">{{ 'configuracoes.ingles' | translate }}</a></li>
       </ul>
     </div>
+
+    <div class="btn-group ml-8" *ngIf="isUserAuthenticated" (click)="openModalLogout(template)">
+      <span class="btn-dropdown-menu">
+        <mat-icon>logout</mat-icon>
+      </span>
+    </div>
   </div>
 </header>
+
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p class="p-8">{{ 'login.desejaRealmenteSair' | translate }}</p>
+    <button type="button" class="btn btn-outline-default" (click)="confirm()" >{{ 'geral.sim' | translate }}</button>
+    <button type="button" class="btn btn-outline-primary" (click)="decline()" >{{ 'geral.nao' | translate }}</button>
+  </div>
+</ng-template>
