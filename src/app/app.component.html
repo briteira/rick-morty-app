@@ -1,7 +1,7 @@
 <div class="app-container">
   <app-header></app-header>
   <div class="main-content">
-    <app-menu-sidebar></app-menu-sidebar>
+    <app-menu-sidebar *ngIf="isUserAuthenticated"></app-menu-sidebar>
     <div class="router-content">
       <router-outlet></router-outlet>
     </div>

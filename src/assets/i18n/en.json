@@ -3,7 +3,8 @@
         "home": "Home",
         "personagens": "Characterlist",
         "episodios": "Episodes",
-        "locais": "Locations"
+        "locais": "Locations",
+        "perfil": "Profile"
     },
     "configuracoes": {
         "portugues": "Portuguese",
@@ -70,6 +71,12 @@
         "fechar": "Close",
         "voltar": "Back",
         "erroAoCarregarDados": "An error occurred while loading the data",
-        "nenhumRegistroEncontrado": "No data found"
+        "nenhumRegistroEncontrado": "No data found",
+        "email": "E-mail",
+        "senha": "Password"
+    },
+    "login": {
+        "login": "Login",
+        "emailOuSenhaIncorretos": "Incorrect email or password"
     }
 }

@@ -29,6 +29,8 @@ import { EpisodeDetailComponent } from './modules/episode/episode-detail/episode
 import { LocationListComponent } from './modules/location/location-list/location-list.component';
 import { LocationFilterModalComponent } from './modules/location/location-filter-modal/location-filter-modal.component';
 import { LocationDetailComponent } from './modules/location/location-detail/location-detail.component';
+import { LoginComponent } from './modules/login/login.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -49,7 +51,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     EpisodeDetailComponent,
     LocationListComponent,
     LocationFilterModalComponent,
-    LocationDetailComponent
+    LocationDetailComponent,
+    LoginComponent
   ],
   imports: [
     AppRoutingModule,
@@ -70,7 +73,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatIconModule,
     BsDropdownModule.forRoot(),
     ReactiveFormsModule,
-    TooltipModule.forRoot()
+    TooltipModule.forRoot(),
+    ToastrModule.forRoot()
   ],
   providers: [
     BsModalService

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,15 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   title = 'rick-morty-app';
 
-  constructor(translate: TranslateService) {
-    translate.setDefaultLang('pt');
-    translate.use('pt');
-}
+  isUserAuthenticated: boolean = false;
+
+  constructor(
+    public translate: TranslateService,
+    public authService: AuthService
+  ) {
+    this.translate.setDefaultLang('pt');
+    this.translate.use('pt');
+
+    this.isUserAuthenticated = this.authService.isAuthenticated();
+  }
 }

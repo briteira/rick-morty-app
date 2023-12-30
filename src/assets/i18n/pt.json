@@ -3,7 +3,8 @@
         "home": "Home",
         "personagens": "Personagens",
         "episodios": "Episódios",
-        "locais": "Locais"
+        "locais": "Locais",
+        "perfil": "Perfil"
     },
     "configuracoes": {
         "portugues": "Português",
@@ -70,6 +71,12 @@
         "fechar": "Fechar",
         "voltar": "Voltar",
         "erroAoCarregarDados": "Ocorreu um erro ao carregar os dados",
-        "nenhumRegistroEncontrado": "Nenhum registro encontrado"
+        "nenhumRegistroEncontrado": "Nenhum registro encontrado",
+        "email": "E-mail",
+        "senha": "Senha"
+    },
+    "login": {
+        "login": "Login",
+        "emailOuSenhaIncorretos": "E-mail ou senha incorretos"
     }
 }
