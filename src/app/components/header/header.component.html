@@ -1,8 +1,11 @@
 <header class="app-header">
-  <h1>Rick Morty App</h1>
+  <h1>
+    Rick and Morty
+  </h1>
   
   <div>
-    <div class="btn-group" dropdown>
+    <small *ngIf="userAuthenticated">{{ 'geral.bemVindo' | translate }} {{ userAuthenticated.nome }}</small>
+    <div class="btn-group ml-8" dropdown>
       <span dropdownToggle class="btn-dropdown-menu">
         <mat-icon>language</mat-icon>
       </span>
@@ -12,7 +15,7 @@
       </ul>
     </div>
 
-    <div class="btn-group ml-8" *ngIf="isUserAuthenticated" (click)="openModalLogout(template)">
+    <div class="btn-group ml-8" *ngIf="userAuthenticated" (click)="openModalLogout(template)">
       <span class="btn-dropdown-menu">
         <mat-icon>logout</mat-icon>
       </span>

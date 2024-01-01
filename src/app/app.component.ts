@@ -22,8 +22,8 @@ export class AppComponent implements OnDestroy {
     this.translate.setDefaultLang('pt');
     this.translate.use('pt');
 
-    this.authSubscription = this.authService.authChange$.subscribe((isAuthenticated) => {
-      this.isUserAuthenticated = isAuthenticated;
+    this.authSubscription = this.authService.authChange$.subscribe((user) => {
+      this.isUserAuthenticated = (user && user != null);
     });
   }
 

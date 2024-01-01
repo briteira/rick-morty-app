@@ -75,7 +75,8 @@
         "email": "E-mail",
         "senha": "Senha",
         "sim": "Sim",
-        "nao": "Não"
+        "nao": "Não",
+        "bemVindo": "Bem vindo"
     },
     "login": {
         "login": "Login",

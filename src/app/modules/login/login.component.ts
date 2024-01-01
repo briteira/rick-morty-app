@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
     const user = this.users.find(u => u.email === email && u.password === senha);
 
     if (user) {
-      this.authService.setAuthenticated(true);
+      this.authService.login(user);
       this.router.navigate(['/characters/']);
     } else {
       this.toastrService.error(this.translateService.instant('login.emailOuSenhaIncorretos'), "", {

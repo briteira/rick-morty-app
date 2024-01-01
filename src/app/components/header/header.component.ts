@@ -13,7 +13,10 @@ import { AuthService } from 'src/app/services/auth.service';
 export class HeaderComponent implements OnInit, OnDestroy {
 
   modalRef?: BsModalRef;
-  isUserAuthenticated: boolean = false;
+  
+  userAuthenticated: any = null;
+
+  nomeUsario = "";
 
   private authSubscription: Subscription;
 
@@ -23,9 +26,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private modalService: BsModalService,
     private router: Router
   ) { 
-    this.authSubscription = this.authService.authChange$.subscribe((isAuthenticated) => {
-      this.isUserAuthenticated = isAuthenticated;
-    });
+    this.authSubscription = this.authService.authChange$.subscribe((user) => {
+      this.userAuthenticated = user;
+    });    
   }
 
   ngOnInit() {
@@ -41,7 +44,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
  
   confirm(): void {
     this.modalRef?.hide();
-    this.authService.setAuthenticated(false);
+    this.authService.logout();
     this.router.navigate(['/login']);
   }
  
