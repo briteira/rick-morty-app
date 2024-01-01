@@ -48,15 +48,26 @@ export class LoginComponent implements OnInit {
     const email = this.formGroup.get('email')?.value;
     const senha = this.formGroup.get('senha')?.value;
 
-    const user = this.users.find(u => u.email === email && u.password === senha);
-
-    if (user) {
-      this.authService.login(user);
-      this.router.navigate(['/characters/']);
-    } else {
-      this.toastrService.error(this.translateService.instant('login.emailOuSenhaIncorretos'), "", {
+    if (email.trim() == '') {
+      this.toastrService.error(this.translateService.instant('login.emailObrigatorio'), "", {
         positionClass: 'toast-bottom-right' 
-     });
+      });
+    } else if (senha.trim() == '') {
+      this.toastrService.error(this.translateService.instant('login.senhaObrigatorio'), "", {
+        positionClass: 'toast-bottom-right' 
+      });
+    } else {
+
+      const user = this.users.find(u => u.email === email && u.password === senha);
+
+      if (user) {
+        this.authService.login(user);
+        this.router.navigate(['/characters/']);
+      } else {
+        this.toastrService.error(this.translateService.instant('login.emailOuSenhaIncorretos'), "", {
+          positionClass: 'toast-bottom-right' 
+        });
+      }
     }
   }
 

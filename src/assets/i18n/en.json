@@ -82,6 +82,8 @@
     "login": {
         "login": "Login",
         "emailOuSenhaIncorretos": "Incorrect email or password",
-        "desejaRealmenteSair": "Do you really want to leave?"
+        "desejaRealmenteSair": "Do you really want to leave?",
+        "emailObrigatorio": "Email is required",
+        "senhaObrigatorio": "Password is required"
     }
 }

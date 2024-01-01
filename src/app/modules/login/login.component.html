@@ -2,11 +2,18 @@
   <div class="row">
     <div class="col-md-12 text-center">
       <form [formGroup]="formGroup">
-        <div class="form-group mb-3">
+
+        <div class="input-group mb-2 mr-sm-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><mat-icon>mail</mat-icon></div>
+          </div>
           <input type="email" class="form-control" formControlName="email" id="email" placeholder="{{ 'geral.email' | translate }}">
         </div>
 
-        <div class="form-group mb-3">
+        <div class="input-group mb-2 mr-sm-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><mat-icon>lock</mat-icon></div>
+          </div>
           <input type="password" class="form-control" formControlName="senha" id="password" placeholder="{{ 'geral.senha' | translate }}">
         </div>
 
