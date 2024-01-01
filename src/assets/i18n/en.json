@@ -76,7 +76,8 @@
         "senha": "Password",
         "sim": "Yes",
         "nao": "No",
-        "bemVindo": "Welcome"
+        "bemVindo": "Welcome",
+        "nome": "Name"
     },
     "login": {
         "login": "Login",

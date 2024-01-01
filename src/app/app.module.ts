@@ -31,6 +31,7 @@ import { LocationFilterModalComponent } from './modules/location/location-filter
 import { LocationDetailComponent } from './modules/location/location-detail/location-detail.component';
 import { LoginComponent } from './modules/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
+import { ProfileComponent } from './modules/profile/profile.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -52,7 +53,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     LocationListComponent,
     LocationFilterModalComponent,
     LocationDetailComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     AppRoutingModule,

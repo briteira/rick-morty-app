@@ -1,0 +1,22 @@
+.conteudo {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 16px;
+}
+
+.img-dados {
+    width: 260px;
+    margin-right: 16px;
+}
+
+.dados {
+    padding-top: 16px;
+}
+
+.grupo-dados {
+    padding-bottom: 16px;
+}
+
+.clickable {
+    cursor: pointer;
+}

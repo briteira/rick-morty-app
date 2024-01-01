@@ -76,7 +76,8 @@
         "senha": "Senha",
         "sim": "Sim",
         "nao": "Não",
-        "bemVindo": "Bem vindo"
+        "bemVindo": "Bem vindo",
+        "nome": "Nome"
     },
     "login": {
         "login": "Login",

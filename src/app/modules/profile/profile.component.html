@@ -1,3 +1,28 @@
-<p>
-  profile works!
-</p>
+<div class="header">
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-between">
+      <h3>{{ 'menu.perfil' | translate }}</h3>
+    </div>
+  </div>
+</div>
+
+<div class="conteudo">
+  <div class="d-flex justify-content-start">
+    <img class="img-dados" [src]="user?.foto" />
+    
+    <div class="dados">
+      <div class="row">
+        <div class="col-md-12 grupo-dados">
+          <span>{{ 'geral.nome' | translate }}: </span>
+          <strong>{{ user?.nome + ' ' + user?.sobrenome }} </strong>
+        </div>
+
+        <div class="col-md-12 grupo-dados">
+          <span>{{ 'geral.email' | translate }}: </span>
+          <strong>{{ user?.email }} </strong>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
