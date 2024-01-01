@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable, delay, of } from 'rxjs';
+import { Observable, Subscription, delay, of } from 'rxjs';
 import { usersMock } from 'src/app/mocks/users.mock';
 import { AuthService } from 'src/app/services/auth.service';
 import { ToastrService } from 'ngx-toastr';
@@ -16,6 +16,10 @@ export class LoginComponent implements OnInit {
 
   private users = usersMock;
 
+  isUserAuthenticated: boolean = false;
+
+  private authSubscription: Subscription;
+
   formGroup: FormGroup;
 
   constructor(
@@ -29,10 +33,16 @@ export class LoginComponent implements OnInit {
       email: ['', []],
       senha: ['', []]
     });
-  }
 
-  ngOnInit() {
+    this.authSubscription = this.authService.authChange$.subscribe((user) => {
+      this.isUserAuthenticated = (user && user != null);
+      if (this.isUserAuthenticated) {
+        this.router.navigate(['/characters/']);
+      }
+    });
   }
+  ngOnInit(): void {}
+
 
   login(): void {
     const email = this.formGroup.get('email')?.value;
