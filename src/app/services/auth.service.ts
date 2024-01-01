@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { UserModel } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class AuthService {
     return user ? true : false;
   }
 
-  getUser() {
+  getUser(): UserModel | null {
     const user = localStorage.getItem('user');
     return user ? JSON.parse(user) : null;
   }

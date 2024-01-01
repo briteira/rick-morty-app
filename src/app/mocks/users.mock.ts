@@ -1,4 +1,6 @@
-export const usersMock = [
+import { UserModel } from "../models/user.model";
+
+export const usersMock: UserModel[] = [
     {
         id: 1,
         email: 'usuario1@example.com',

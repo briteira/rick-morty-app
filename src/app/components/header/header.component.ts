@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Subscription } from 'rxjs';
+import { UserModel } from 'src/app/models/user.model';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -14,9 +15,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   modalRef?: BsModalRef;
   
-  userAuthenticated: any = null;
-
-  nomeUsario = "";
+  userAuthenticated: UserModel | null = null;
 
   private authSubscription: Subscription;
 
