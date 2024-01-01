@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth-guard';
 
 const routes: Routes = [
   { 
     path: 'characters', 
-    loadChildren: () => import('./modules/character/character-routing.module').then((m) => m.CharacterRoutingModule) 
+    loadChildren: () => import('./modules/character/character-routing.module').then((m) => m.CharacterRoutingModule),
+    canActivate: [AuthGuard]
   },
   { 
     path: 'episodes', 
-    loadChildren: () => import('./modules/episode/episode-routing.module').then((m) => m.EpisodeRoutingModule) 
+    loadChildren: () => import('./modules/episode/episode-routing.module').then((m) => m.EpisodeRoutingModule),
+    canActivate: [AuthGuard]
   },
   { path: 
     'locations', 
-    loadChildren: () => import('./modules/location/location-routing.module').then((m) => m.LocationRoutingModule) 
+    loadChildren: () => import('./modules/location/location-routing.module').then((m) => m.LocationRoutingModule),
+    canActivate: [AuthGuard]
   },
   { 
     path: 'login', 
@@ -20,7 +24,8 @@ const routes: Routes = [
   },
   { 
     path: 'profile', 
-    loadChildren: () => import('./modules/profile/profile-routing.module').then((m) => m.ProfileRoutingModule) 
+    loadChildren: () => import('./modules/profile/profile-routing.module').then((m) => m.ProfileRoutingModule),
+    canActivate: [AuthGuard]
   },
 ];
 
