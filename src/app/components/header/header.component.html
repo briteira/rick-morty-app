@@ -6,7 +6,7 @@
   <div>
     <small *ngIf="userAuthenticated">{{ 'geral.bemVindo' | translate }} {{ userAuthenticated.nome }}</small>
     <div class="btn-group ml-8" dropdown>
-      <span dropdownToggle class="btn-dropdown-menu">
+      <span dropdownToggle class="btn-dropdown-menu"> 
         <mat-icon>language</mat-icon>
       </span>
       <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="button-basic">
@@ -15,7 +15,7 @@
       </ul>
     </div>
 
-    <div class="btn-group ml-8" *ngIf="userAuthenticated" (click)="openModalLogout(template)">
+    <div class="btn-group ml-8" id="btn-abrir-modal-logout" *ngIf="userAuthenticated" (click)="openModalLogout(template)">
       <span class="btn-dropdown-menu">
         <mat-icon>logout</mat-icon>
       </span>
