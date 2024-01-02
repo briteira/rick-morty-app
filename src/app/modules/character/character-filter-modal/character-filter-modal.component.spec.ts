@@ -4,6 +4,10 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { CharacterFilterModalComponent } from './character-filter-modal.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('CharacterFilterModalComponent', () => {
   let component: CharacterFilterModalComponent;
@@ -11,7 +15,13 @@ describe('CharacterFilterModalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CharacterFilterModalComponent ]
+      declarations: [ CharacterFilterModalComponent ],
+      imports: [ 
+        ReactiveFormsModule,
+        RouterTestingModule, 
+        HttpClientModule,
+        TranslateModule.forRoot(),
+      ]
     })
     .compileComponents();
   }));

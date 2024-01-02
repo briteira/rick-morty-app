@@ -4,6 +4,9 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { HeaderComponent } from './header.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { MatIconModule } from '@angular/material/icon';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -11,7 +14,14 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
+      declarations: [ HeaderComponent ],
+      imports: [
+        TranslateModule.forRoot(),
+        MatIconModule
+      ],
+      providers: [
+        BsModalService
+      ]
     })
     .compileComponents();
   }));

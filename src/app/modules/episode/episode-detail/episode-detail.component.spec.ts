@@ -4,6 +4,9 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { EpisodeDetailComponent } from './episode-detail.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('EpisodeDetailComponent', () => {
   let component: EpisodeDetailComponent;
@@ -11,7 +14,12 @@ describe('EpisodeDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EpisodeDetailComponent ]
+      declarations: [ EpisodeDetailComponent ],
+      imports: [ 
+        RouterTestingModule, 
+        HttpClientModule,
+        TranslateModule.forRoot(),
+      ]
     })
     .compileComponents();
   }));

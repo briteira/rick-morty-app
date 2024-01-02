@@ -4,6 +4,9 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { InputSearchComponent } from './input-search.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { MatIconModule } from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('InputSearchComponent', () => {
   let component: InputSearchComponent;
@@ -11,7 +14,12 @@ describe('InputSearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InputSearchComponent ]
+      declarations: [ InputSearchComponent ],
+      imports: [
+        TranslateModule.forRoot(),
+        MatIconModule,
+        ReactiveFormsModule
+      ]
     })
     .compileComponents();
   }));

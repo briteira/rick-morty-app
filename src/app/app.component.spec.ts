@@ -1,9 +1,25 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { HeaderComponent } from './components/header/header.component';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { RouterModule } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    declarations: [AppComponent]
+    declarations: [
+      AppComponent, 
+      HeaderComponent
+    ],
+    imports: [
+      TranslateModule.forRoot(),
+      RouterModule,
+      MatIconModule
+    ],
+    providers: [
+      BsModalService
+    ]
   }));
 
   it('should create the app', () => {
@@ -16,12 +32,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('rick-morty-app');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('rick-morty-app app is running!');
   });
 });

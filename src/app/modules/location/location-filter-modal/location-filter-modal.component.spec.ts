@@ -4,6 +4,10 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { LocationFilterModalComponent } from './location-filter-modal.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('LocationFilterModalComponent', () => {
   let component: LocationFilterModalComponent;
@@ -11,7 +15,13 @@ describe('LocationFilterModalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LocationFilterModalComponent ]
+      declarations: [ LocationFilterModalComponent ],
+      imports: [ 
+        ReactiveFormsModule,
+        RouterTestingModule, 
+        HttpClientModule,
+        TranslateModule.forRoot(),
+      ]
     })
     .compileComponents();
   }));

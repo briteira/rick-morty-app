@@ -4,6 +4,10 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { EpisodeFilterModalComponent } from './episode-filter-modal.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('EpisodeFilterModalComponent', () => {
   let component: EpisodeFilterModalComponent;
@@ -11,7 +15,13 @@ describe('EpisodeFilterModalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EpisodeFilterModalComponent ]
+      declarations: [ EpisodeFilterModalComponent ],
+      imports: [ 
+        ReactiveFormsModule,
+        RouterTestingModule, 
+        HttpClientModule,
+        TranslateModule.forRoot(),
+      ]
     })
     .compileComponents();
   }));
