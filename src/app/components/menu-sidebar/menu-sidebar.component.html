@@ -1,8 +1,28 @@
 <div class="menu-sidebar">
   <ul>
-      <li><a routerLink="/characters">{{ 'menu.personagens' | translate }}</a></li>
-      <li><a routerLink="/episodes">{{ 'menu.episodios' | translate }}</a></li>
-      <li><a routerLink="/locations">{{ 'menu.locais' | translate }}</a></li>
-      <li><a routerLink="/profile">{{ 'menu.perfil' | translate }}</a></li>
+      <li>
+        <a routerLink="/characters">
+          <span class="d-none d-sm-block">{{ 'menu.personagens' | translate }}</span>
+          <mat-icon tooltip="{{ 'menu.personagens' | translate }}" class="d-block d-sm-none">face</mat-icon>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/episodes">
+          <span class="d-none d-sm-block">{{ 'menu.episodios' | translate }}</span>
+          <mat-icon tooltip="{{ 'menu.episodios' | translate }}" class="d-block d-sm-none">movie</mat-icon>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/locations">
+          <span class="d-none d-sm-block">{{ 'menu.locais' | translate }}</span>
+          <mat-icon tooltip="{{ 'menu.locais' | translate }}" class="d-block d-sm-none">location_on</mat-icon>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/profile">
+          <span class="d-none d-sm-block">{{ 'menu.perfil' | translate }}</span>
+          <mat-icon tooltip="{{ 'menu.perfil' | translate }}" class="d-block d-sm-none">account_circle</mat-icon>
+        </a>
+      </li>
   </ul>
 </div>

@@ -28,3 +28,9 @@
 .menu-sidebar ul li {
     padding: 6px 0
 }
+
+@media (max-width: 575px) {
+    .menu-sidebar {
+        width: 64px;
+    }
+}
