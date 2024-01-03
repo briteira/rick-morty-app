@@ -27,6 +27,11 @@ const routes: Routes = [
     loadChildren: () => import('./modules/profile/profile-routing.module').then((m) => m.ProfileRoutingModule),
     canActivate: [AuthGuard]
   },
+  { 
+    path: '**',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
