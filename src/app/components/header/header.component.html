@@ -4,7 +4,7 @@
   </h1>
   
   <div>
-    <small *ngIf="userAuthenticated">{{ 'geral.bemVindo' | translate }} {{ userAuthenticated.nome }}</small>
+    <small class="d-none d-sm-inline-block" *ngIf="userAuthenticated">{{ 'geral.bemVindo' | translate }} {{ userAuthenticated.nome }}</small>
     <div class="btn-group ml-8" dropdown>
       <span dropdownToggle class="btn-dropdown-menu"> 
         <mat-icon>language</mat-icon>

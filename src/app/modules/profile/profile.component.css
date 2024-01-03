@@ -20,3 +20,17 @@
 .clickable {
     cursor: pointer;
 }
+
+
+@media (max-width: 767px) {
+    .img-dados {
+        margin-right: 0;
+        height: auto;
+        width: 100%;
+    }
+
+    .dados {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}

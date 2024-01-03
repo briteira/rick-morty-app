@@ -75,6 +75,7 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
       this.loading = false;
 
       this.dados = [...this.dados, ...result.results];
+      this.ajustarAlturaTabela();
       
       this.pagina++;
       if (this.pagina <= result.info.pages) {
@@ -148,11 +149,6 @@ export class CharacterListComponent implements OnInit, AfterViewInit {
     this.divTabela?.nativeElement.scrollTo({
       top: 0,
     });
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event): void {
-    this.ajustarAlturaTabela();
   }
 
   abrirModalFiltros() {
