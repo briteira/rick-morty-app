@@ -1,7 +1,7 @@
-<div class="login-container">
+<div class="login-container d-flex justify-content-center align-items-center">
   <div class="row">
     <div class="col-md-12 text-center">
-      <form [formGroup]="formGroup">
+      <form [formGroup]="formGroup" class="d-flex flex-column justify-content-center align-items-center max-width-400">
 
         <div class="input-group mb-2 mr-sm-2">
           <div class="input-group-prepend">
@@ -17,9 +17,7 @@
           <input type="password" class="form-control" formControlName="senha" id="password" placeholder="{{ 'geral.senha' | translate }}" (keyup.enter)="login()">
         </div>
 
-        <div class="d-grid">
-          <button type="button" class="btn btn-outline-primary" (click)="login()">{{ 'login.login' | translate }}</button>
-        </div>
+        <button type="button" class="btn btn-outline-primary btn-block" (click)="login()">{{ 'login.login' | translate }}</button>
       </form>
     </div>
   </div>
