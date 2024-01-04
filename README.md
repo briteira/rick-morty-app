@@ -18,6 +18,7 @@ npm install
 ```bash
 ng serve
 ```
+Caso o navegador não abra automaticamente, acesse  http://localhost:4200/ 
 
 ## Build
 ```bash
